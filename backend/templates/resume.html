@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ name }} - {{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/projects" class="nav-link">Projects</a></li>
+            <li><a href="/resume" class="nav-link active">Resume</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Contact -->
+    <div class="section contact">
+        <h3>Contact</h3>
+        <p>
+            Phone: {{ resume.contact.phone }} <br>
+            Email: <a href="mailto:{{ resume.contact.email }}">{{ resume.contact.email }}</a> <br>
+            Portfolio: <a href="{{ resume.contact.portfolio }}">Portfolio</a> <br>
+            GitHub: <a href="{{ resume.contact.github }}">{{ resume.contact.github }}</a> <br>
+            LinkedIn: <a href="{{ resume.contact.linkedin }}">{{ resume.contact.linkedin }}</a>
+        </p>
+    </div>
+
+    <!-- Profile -->
+    <div class="section">
+        <h3>Profile</h3>
+        <p>{{ resume.profile }}</p>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h3>Education</h3>
+        {% for edu in resume.education %}
+            <p><strong>{{ edu.college }}</strong> – {{ edu.degree }} ({{ edu.year }})</p>
+            <ul>
+                {% for detail in edu.details %}
+                    <li>{{ detail }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+
+    <!-- Achievements -->
+    <div class="section">
+        <h3>Achievements</h3>
+        <ul>
+            {% for achievement in resume.achievements %}
+                <li>{{ achievement }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Languages -->
+    <div class="section">
+        <h3>Languages</h3>
+        <p>{{ resume.languages | join(', ') }}</p>
+    </div>
+
+    <!-- Interests -->
+    <div class="section">
+        <h3>Interests</h3>
+        <p>{{ resume.interests | join(', ') }}</p>
+    </div>
+
+</main>
+
+<footer>
+    &copy; {{ resume.name }} 2025
+</footer>
+
+</body>
+</html>

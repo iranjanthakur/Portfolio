@@ -1,0 +1,176 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h3 {
+    margin: 5px 0 15px;
+    font-weight: normal;
+}
+
+/* Navigation menu */
+/* Navbar container */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Navbar links */
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect with underline animation */
+.navbar ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hover background effect */
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+}
+
+/* Active page styling */
+.navbar ul li a.active {
+    background-color: #ff009d;
+    color: #1a73e8;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/* Main content styling */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #1a73e8;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 15px;
+}
+
+/* Lists */
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Project cards */
+.project-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: 5px solid #1a73e8;
+    border-radius: 5px;
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.project-card a:hover {
+    color: #ff4500;
+}
+
+/* Resume section styling */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 5px;
+}
+
+/* Contact page styling */
+.contact a {
+    color: #1a73e8;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.contact a:hover {
+    color: #ff4500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1a73e8;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
